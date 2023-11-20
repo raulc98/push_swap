@@ -6,7 +6,7 @@
 /*   By: rcabrero <rcabrero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 21:47:02 by rcabrero          #+#    #+#             */
-/*   Updated: 2023/11/18 16:02:28 by rcabrero         ###   ########.fr       */
+/*   Updated: 2023/11/20 19:14:16 by rcabrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,8 +161,6 @@ int	main(int argc, char **argv)
 		ft_error();
 		return (-1);
 	}
-	printf("\n\n");
-	imprimir_lista(*stack_a, argc -1);
 	free_stack(stack_a);
 	free_stack(stack_b);
 	return (0);

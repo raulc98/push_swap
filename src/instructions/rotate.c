@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rcabrero <rcabrero@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: rcabrero <rcabrero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 20:27:45 by rcabrero          #+#    #+#             */
-/*   Updated: 2023/11/11 22:04:29 by rcabrero         ###   ########.fr       */
+/*   Updated: 2023/11/20 18:55:26 by rcabrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,18 @@ int	rotate(t_list **stack)
 void ra(t_list **stack_a)
 {
 	rotate(stack_a);
-	write(1, "ra ", 3);
+	write(1, "ra\n", 3);
 }
 
 void rb(t_list **stack_b)
 {
 	rotate(stack_b);
-	write(1, "rb ", 3);
+	write(1, "rb\n", 3);
 }
 
 void rr(t_list **stack_a,t_list **stack_b)
 {
 	rotate(stack_a);
 	rotate(stack_b);
-	write(1, "rr ", 3);
+	write(1, "rr\n", 3);
 }

@@ -6,7 +6,7 @@
 /*   By: rcabrero <rcabrero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 21:47:37 by rcabrero          #+#    #+#             */
-/*   Updated: 2023/11/18 13:14:36 by rcabrero         ###   ########.fr       */
+/*   Updated: 2023/11/20 19:08:16 by rcabrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void sort_controller(t_list **stack_a, t_list **stack_b, int argc)
 	}
 	else
 	{
+		printf("RADIX");
 		radix(stack_a,stack_b);
 	}
 }
@@ -46,7 +47,7 @@ void sort_3(t_list **stack_a)
 	int p1;
 	int p2;
 	int p3;
-	printf("PASO POR SORT_3\n");
+
 	p1 = (*stack_a)->content;
 	p2 = (*stack_a)->next->content;
 	p3 = (*stack_a)->next->next->content;
@@ -73,7 +74,6 @@ void sort_4(t_list **stack_a, t_list **stack_b, int length)
 	int min_index;
 	int	distance;
 
-	printf("PASO POR SORT_4\n");
 	min_index = get_index_min_number(stack_a, length);
 	distance = get_distance(stack_a,min_index);
 	if (distance == 1)
@@ -93,7 +93,7 @@ void sort_4(t_list **stack_a, t_list **stack_b, int length)
 void sort_5(t_list **stack_a, t_list **stack_b, int length)
 {
 	int min_index;
-	printf("PASO POR SORT_5\n");
+
 	min_index = get_index_min_number(stack_a, length);
 	if (min_index == 1)
 		ra(stack_a);
@@ -112,5 +112,5 @@ void sort_5(t_list **stack_a, t_list **stack_b, int length)
 	pb(stack_a, stack_b);
 	sort_4(stack_a,stack_b,length-1);
 	pa(stack_a, stack_b);
-	imprimir_lista(*stack_a, 5);
+	// imprimir_lista(*stack_a, 5);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate_reverse.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rcabrero <rcabrero@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: rcabrero <rcabrero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 17:31:29 by rcabrero          #+#    #+#             */
-/*   Updated: 2023/11/11 15:36:24 by rcabrero         ###   ########.fr       */
+/*   Updated: 2023/11/20 18:55:12 by rcabrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,19 @@ void rotate_reverse(t_list **stack_a)
 void rra(t_list **stack_a)
 {
 	rotate_reverse(stack_a);
-	write(1, "rra ", 4);
+	write(1, "rra\n", 4);
 }
 
 void rrb(t_list **stack_b)
 {
 	rotate_reverse(stack_b);
-	write(1, "rrb ", 4);
+	write(1, "rrb\n", 4);
 }
 
 void rrr(t_list **stack_a,t_list **stack_b)
 {
 	rotate_reverse(stack_a);
 	rotate_reverse(stack_b);
-	write(1, "rrr ", 4);
+	write(1, "rrr\n", 4);
 }
 

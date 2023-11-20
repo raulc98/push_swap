@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_errors.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rcabrero <rcabrero@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: rcabrero <rcabrero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 21:55:45 by rcabrero          #+#    #+#             */
-/*   Updated: 2023/11/09 19:45:52 by rcabrero         ###   ########.fr       */
+/*   Updated: 2023/11/20 19:16:05 by rcabrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,6 @@ int	check_errors(int argc, char **argv)
 	if (argc <= 2)
 	{
 		ft_error();
-		printf("No hay valores suficientes para ordenar!\n");
 		return (0);
 	}
 	if (argc == 2)
@@ -101,5 +100,5 @@ int	check_errors(int argc, char **argv)
 
 void	ft_error()
 {
-	printf("Error\n");
+    write(1, "Error\n", 6);
 }

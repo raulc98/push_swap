@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rcabrero <rcabrero@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: rcabrero <rcabrero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 12:52:12 by rcabrero          #+#    #+#             */
-/*   Updated: 2023/11/11 22:27:47 by rcabrero         ###   ########.fr       */
+/*   Updated: 2023/11/20 18:54:52 by rcabrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	pa(t_list **stack_a, t_list **stack_b)
 {
 	if (push(stack_a, stack_b) == -1)
 		return (-1);
-	write(1, "pa ", 3);
+	write(1, "pa\n", 3);
 	return (0);
 }
 
@@ -51,6 +51,6 @@ int	pb(t_list **stack_a, t_list **stack_b)
 {
 	if (push(stack_b, stack_a) == -1)
 		return (-1);
-	write(1, "pb ", 3);
+	write(1, "pb\n", 3);
 	return (0);
 }

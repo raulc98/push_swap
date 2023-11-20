@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rcabrero <rcabrero@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: rcabrero <rcabrero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 14:46:59 by rcabrero          #+#    #+#             */
-/*   Updated: 2023/11/11 15:36:45 by rcabrero         ###   ########.fr       */
+/*   Updated: 2023/11/20 18:55:40 by rcabrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,19 +34,19 @@ void swap(t_list **stack_a)
 void sa(t_list **stack_a)
 {
 	swap(stack_a);
-	write(1, "sa ", 3);
+	write(1, "sa\n", 3);
 }
 
 void sb(t_list **stack_b)
 {
 	swap(stack_b);
-	write(1, "sb ", 3);
+	write(1, "sb\n", 3);
 }
 
 void ss(t_list **stack_a, t_list **stack_b)
 {
 	swap(stack_a);
 	swap(stack_b);
-	write(1, "sb ", 3);
+	write(1, "sb\n", 3);
 }
 

@@ -6,7 +6,7 @@
 /*   By: rcabrero <rcabrero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 21:47:37 by rcabrero          #+#    #+#             */
-/*   Updated: 2023/11/20 19:08:16 by rcabrero         ###   ########.fr       */
+/*   Updated: 2023/11/25 11:13:24 by rcabrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void sort_controller(t_list **stack_a, t_list **stack_b, int argc)
 	else
 	{
 		printf("RADIX");
-		radix(stack_a,stack_b);
+		radix(stack_a, stack_b, length);
 	}
 }
 
@@ -90,27 +90,28 @@ void sort_4(t_list **stack_a, t_list **stack_b, int length)
 	pa(stack_a, stack_b);
 }
 
-void sort_5(t_list **stack_a, t_list **stack_b, int length)
+void	sort_5(t_list **stack_a, t_list **stack_b, int length)
 {
-	int min_index;
+	int	distance;
 
-	min_index = get_index_min_number(stack_a, length);
-	if (min_index == 1)
+	distance = get_distance(stack_a, get_min(stack_a, -1));
+	if (distance == 1)
 		ra(stack_a);
-	else if (min_index == 2)
+	else if (distance == 2)
 	{
 		ra(stack_a);
 		ra(stack_a);
 	}
-	else if (min_index == 3)
+	else if (distance == 3)
 	{
 		rra(stack_a);
 		rra(stack_a);
 	}
-	else if (min_index == 4)
+	else if (distance == 4)
 		rra(stack_a);
+	if (is_order(stack_a))
+		return ;
 	pb(stack_a, stack_b);
-	sort_4(stack_a,stack_b,length-1);
+	sort_4(stack_a, stack_b,length-1);
 	pa(stack_a, stack_b);
-	// imprimir_lista(*stack_a, 5);
 }

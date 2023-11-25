@@ -6,7 +6,7 @@
 /*   By: rcabrero <rcabrero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 21:48:41 by rcabrero          #+#    #+#             */
-/*   Updated: 2023/11/18 16:02:13 by rcabrero         ###   ########.fr       */
+/*   Updated: 2023/11/25 11:16:01 by rcabrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ t_list			*ft_lstlast_prev(t_list *lst);
 // t_list	*ft_lstlast(t_list *lst);
 int				get_index_min_number(t_list **stack, int length);
 int				get_distance(t_list **stack, int index);
-void			radix(t_list **stack_a, t_list **stack_b);
+void			radix(t_list **stack_a, t_list **stack_b,int argc);
 void			index_stack(t_list **stack);
 
 int				ft_isdigit(int c);
@@ -81,6 +81,7 @@ int				ft_atoi(const char *str);
 size_t			ft_strlen(const char *str);
 t_list			*ft_lstnew(int content);
 
+int				get_min(t_list **stack, int val);
 
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_errors.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rcabrero <rcabrero@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: rcabrero <rcabrero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 21:55:45 by rcabrero          #+#    #+#             */
-/*   Updated: 2023/11/20 19:16:05 by rcabrero         ###   ########.fr       */
+/*   Updated: 2023/11/25 13:58:04 by rcabrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,39 +63,34 @@ int	is_order(t_list **stack_a)
 
 int	check_errors(int argc, char **argv)
 {
-	int		i;
-	long	num_aux;
-	char	**values;
+    int		i;
+    long	num_aux;
+    char	**values;
 
-	i = 0;
-	if (argc <= 2)
-	{
-		ft_error();
-		return (0);
-	}
-	if (argc == 2)
-		values = ft_split(argv[i],' ');
-	else
-	{
-		i = 1;
-		values = argv;
-	}
-	while (values[i])
-	{
-		num_aux = ft_atoi(values[i]);
-		if (!ft_isnum(values[i]))
-		{
-			ft_error();
-			return (0);
-		}
-		if (num_aux < -2147483648 || num_aux > 2147483647)
-		{
-			ft_error();
-			return (0);
-		}
-		i++;
-	}
-	return (1);
+    i = 0;
+    if (argc == 2)
+        values = ft_split(argv[1],' ');
+    else
+    {
+        i = 1;
+        values = argv;
+    }
+    while (values[i])
+    {
+        num_aux = ft_atoi(values[i]);
+        if (!ft_isnum(values[i]))
+        {
+            ft_error();
+            return (0);
+        }
+        if (num_aux < -2147483648 || num_aux > 2147483647)
+        {
+            ft_error();
+            return (0);
+        }
+        i++;
+    }
+    return (1);
 }
 
 void	ft_error()

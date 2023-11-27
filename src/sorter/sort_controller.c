@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_controller.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rcabrero <rcabrero@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: rcabrero <rcabrero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 21:47:37 by rcabrero          #+#    #+#             */
-/*   Updated: 2023/11/25 11:13:24 by rcabrero         ###   ########.fr       */
+/*   Updated: 2023/11/25 13:32:06 by rcabrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void sort_controller(t_list **stack_a, t_list **stack_b, int argc)
 	}
 	else
 	{
-		printf("RADIX");
 		radix(stack_a, stack_b, length);
 	}
 }

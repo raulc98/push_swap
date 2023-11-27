@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rcabrero <rcabrero@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: rcabrero <rcabrero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 21:47:02 by rcabrero          #+#    #+#             */
-/*   Updated: 2023/11/25 12:48:56 by rcabrero         ###   ########.fr       */
+/*   Updated: 2023/11/25 14:16:55 by rcabrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,33 +110,33 @@ void	index_stack(t_list **stack)
 	}
 }
 
-void	imprimir_lista(t_list *head, int length)
-{
-	printf("\n");
-	t_list	*current;
-	int		i;
-	int		valor;
-	int		index;
+// void	imprimir_lista(t_list *head, int length)
+// {
+// 	printf("\n");
+// 	t_list	*current;
+// 	int		i;
+// 	int		valor;
+// 	int		index;
 
-	current = head;
-	i = 1;
-	while (i <= length && current != NULL)
-	{
-		valor = current->content;
-		index = current->index;
-		printf("%d, ", valor);
-		if (i < length)
-		{
-			current = current->next;
-		}
-		else
-		{
-			break;
-		}
-		i++;
-	}
-	printf("\n");
-}
+// 	current = head;
+// 	i = 1;
+// 	while (i <= length && current != NULL)
+// 	{
+// 		valor = current->content;
+// 		index = current->index;
+// 		printf("%d, ", valor);
+// 		if (i < length)
+// 		{
+// 			current = current->next;
+// 		}
+// 		else
+// 		{
+// 			break;
+// 		}
+// 		i++;
+// 	}
+// 	printf("\n");
+// }
 
 int	main(int argc, char **argv)
 {
@@ -161,7 +161,7 @@ int	main(int argc, char **argv)
 		ft_error();
 		return (-1);
 	}
-	imprimir_lista(*stack_a, argc - 1);
+	// imprimir_lista(*stack_a, argc - 1);
 	free_stack(stack_a);
 	free_stack(stack_b);
 	return (0);

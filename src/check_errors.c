@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   check_errors.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rcabrero <rcabrero@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: rcabrero <rcabrero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 21:55:45 by rcabrero          #+#    #+#             */
-/*   Updated: 2023/11/25 13:58:04 by rcabrero         ###   ########.fr       */
+/*   Updated: 2023/11/27 21:51:45 by rcabrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //TODO: ARREGLAR PROBLEMAS NORMINETTE...
 #include "../includes/push_swap.h"
+
+static int	ft_error(char **value, int argc);
 
 static int	ft_isnum(char *num)
 {
@@ -79,21 +81,39 @@ int	check_errors(int argc, char **argv)
     {
         num_aux = ft_atoi(values[i]);
         if (!ft_isnum(values[i]))
-        {
-            ft_error();
-            return (0);
-        }
+            return(ft_error(values, argc));
         if (num_aux < -2147483648 || num_aux > 2147483647)
-        {
-            ft_error();
-            return (0);
-        }
+            return(ft_error(values, argc));
         i++;
     }
+	if (argc == 2)
+	{
+		i = 0;
+		while (values[i])
+		{
+			free(values[i]);
+			i++;
+		}
+		free(values);	
+	}	
     return (1);
 }
 
-void	ft_error()
+
+static int	ft_error(char **value, int argc)
 {
-    write(1, "Error\n", 6);
+	int i;
+    
+	write(1, "Error\n", 6);
+	if (argc == 2)
+	{
+		i = 0;
+		while (value[i])
+		{
+			free(value[i]);
+			i++;
+		}
+		free(value);	
+	}
+	return(0);
 }

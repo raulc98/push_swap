@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rcabrero <rcabrero@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: rcabrero <rcabrero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 21:47:02 by rcabrero          #+#    #+#             */
-/*   Updated: 2023/11/25 14:16:55 by rcabrero         ###   ########.fr       */
+/*   Updated: 2023/11/27 21:56:01 by rcabrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,26 +51,13 @@ void	free_stack(t_list **stack)
 	free(stack);
 }
 
-// void	init_stack(t_list **stack_a, char **argv)
-// {
-// 	int		i;
-// 	t_list	*current_stack;
-// 	int		current_number;
-// 	char	**values;
+static int ft_exit(t_list **stack_a,t_list **stack_b)
+{
+	free_stack(stack_a);
+	free_stack(stack_b);
+	return (0);
+}
 
-// 	i = 1;
-// 	values = argv;
-// 	while (argv[i])
-// 	{
-// 		current_number = ft_atoi (argv[i]);
-// 		current_stack = ft_lstnew (current_number, i - 1);
-// 		ft_lstadd_back (stack_a, current_stack);
-// 		i++;
-// 	}
-// 	index_stack(stack_a);
-// 	// if (argc == 2)
-// 	// 	ft_free(args);
-// }
 static void	init_stack(t_list **stack, int argc, char **argv)
 {
 	t_list	*new;
@@ -91,9 +78,17 @@ static void	init_stack(t_list **stack, int argc, char **argv)
 		ft_lstadd_back(stack, new);
 		i++;
 	}
+	if (argc == 2)
+	{
+		i = 0;
+		while (args[i])
+		{
+			free(args[i]);
+				i++;
+		}
+		free(args);	
+	}
 	index_stack(stack);
-	// if (argc == 2)
-	// 	ft_free(args);
 }
 
 void	index_stack(t_list **stack)
@@ -138,31 +133,38 @@ void	index_stack(t_list **stack)
 // 	printf("\n");
 // }
 
+void leaks()
+{
+	system("leaks  push_swap");
+}
+
 int	main(int argc, char **argv)
 {
 	t_list	**stack_a;
 	t_list	**stack_b;
 	
+	atexit(leaks);
+	if (argc == 1)
+		return 0;
+	if (!check_errors(argc, argv))
+		return (0);
 	stack_a = (t_list **)malloc(sizeof(t_list));
 	stack_b = (t_list **)malloc(sizeof(t_list));
 	*stack_a = NULL;
 	*stack_b = NULL;
-	if (!check_errors(argc, argv))
-		return (0);
 	init_stack(stack_a, argc, argv);
 	if (!check_equals(stack_a))
 	{
 		if(is_order(stack_a))
-			return (0);
+			return(ft_exit(stack_a,stack_b));
 		sort_controller (stack_a, stack_b, argc);
 	}
 	else
 	{
-		ft_error();
+		write(1, "Error\n", 6);
+		ft_exit(stack_a,stack_b);
 		return (-1);
 	}
 	// imprimir_lista(*stack_a, argc - 1);
-	free_stack(stack_a);
-	free_stack(stack_b);
-	return (0);
+	return(ft_exit(stack_a,stack_b));
 }

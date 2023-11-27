@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_controller.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rcabrero <rcabrero@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: rcabrero <rcabrero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 21:47:37 by rcabrero          #+#    #+#             */
-/*   Updated: 2023/11/25 13:32:06 by rcabrero         ###   ########.fr       */
+/*   Updated: 2023/11/27 20:25:56 by rcabrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 void sort_controller(t_list **stack_a, t_list **stack_b, int argc)
 {
 	int length;
+	(void) argc;
 
-	length = argc - 1;
+	length = ft_lstsize(*stack_a);
 	if (length == 2)
 		sort_2(stack_a);
 	else if (length == 3)

@@ -6,7 +6,7 @@
 /*   By: rcabrero <rcabrero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 21:48:41 by rcabrero          #+#    #+#             */
-/*   Updated: 2023/11/25 11:16:01 by rcabrero         ###   ########.fr       */
+/*   Updated: 2023/11/27 21:09:23 by rcabrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ typedef struct t_list
 
 // void				init_stack(t_list **stack_a, char **argv);
 void				imprimir_lista(t_list *head, int length);
-void				ft_error();
 //check_errors:
 int					check_errors(int argc, char **argv);
 int					check_equals(t_list **head);

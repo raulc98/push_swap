@@ -9,7 +9,7 @@
 			"type": "cppdbg",
 			"request": "launch",
 			"program": "/Users/rcabrero/cursus/push_swap/push_swap",
-			"args": ["23", "12"],
+			"args": ["92 91 90"],
 			"stopAtEntry": false,
 			"cwd": "${fileDirname}",
 			"environment": [],

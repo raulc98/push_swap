@@ -6,16 +6,31 @@
 /*   By: rcabrero <rcabrero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 21:55:45 by rcabrero          #+#    #+#             */
-/*   Updated: 2023/11/27 21:51:45 by rcabrero         ###   ########.fr       */
+/*   Updated: 2023/11/28 20:12:36 by rcabrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//TODO: ARREGLAR PROBLEMAS NORMINETTE...
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
-static int	ft_error(char **value, int argc);
+int	ft_error(char **value, int argc)
+{
+	int i;
+    
+	write(1, "Error\n", 6);
+	if (argc == 2)
+	{
+		i = 0;
+		while (value[i])
+		{
+			free(value[i]);
+			i++;
+		}
+		free(value);	
+	}
+	return(0);
+}
 
-static int	ft_isnum(char *num)
+int	ft_isnum(char *num)
 {
 	int	i;
 
@@ -61,59 +76,4 @@ int	is_order(t_list **stack_a)
     }
 
     return (1);
-}
-
-int	check_errors(int argc, char **argv)
-{
-    int		i;
-    long	num_aux;
-    char	**values;
-
-    i = 0;
-    if (argc == 2)
-        values = ft_split(argv[1],' ');
-    else
-    {
-        i = 1;
-        values = argv;
-    }
-    while (values[i])
-    {
-        num_aux = ft_atoi(values[i]);
-        if (!ft_isnum(values[i]))
-            return(ft_error(values, argc));
-        if (num_aux < -2147483648 || num_aux > 2147483647)
-            return(ft_error(values, argc));
-        i++;
-    }
-	if (argc == 2)
-	{
-		i = 0;
-		while (values[i])
-		{
-			free(values[i]);
-			i++;
-		}
-		free(values);	
-	}	
-    return (1);
-}
-
-
-static int	ft_error(char **value, int argc)
-{
-	int i;
-    
-	write(1, "Error\n", 6);
-	if (argc == 2)
-	{
-		i = 0;
-		while (value[i])
-		{
-			free(value[i]);
-			i++;
-		}
-		free(value);	
-	}
-	return(0);
 }

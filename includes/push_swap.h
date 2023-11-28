@@ -6,7 +6,7 @@
 /*   By: rcabrero <rcabrero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 21:48:41 by rcabrero          #+#    #+#             */
-/*   Updated: 2023/11/27 21:09:23 by rcabrero         ###   ########.fr       */
+/*   Updated: 2023/11/28 20:14:56 by rcabrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,6 @@ typedef struct t_list
 
 // void				init_stack(t_list **stack_a, char **argv);
 void				imprimir_lista(t_list *head, int length);
-//check_errors:
-int					check_errors(int argc, char **argv);
-int					check_equals(t_list **head);
-int					is_order(t_list **stack_a);
 
 //METODOS DEL LIBFT CON LISTA
 void				ft_lstadd_front(t_list **lst, t_list *new);
@@ -82,5 +78,14 @@ t_list			*ft_lstnew(int content);
 
 int				get_min(t_list **stack, int val);
 
+//INIT_STACK
+int				init_stack(int argc, char **argv, t_list **stack);
+
+//CHECK_ERRORS
+int				is_order(t_list **stack_a);
+int				check_equals(t_list **head);
+int				is_order(t_list **stack_a);
+int				ft_isnum(char *num);
+int				ft_error(char **value, int argc);
 
 #endif

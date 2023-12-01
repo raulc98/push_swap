@@ -6,7 +6,7 @@
 /*   By: rcabrero <rcabrero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 21:55:45 by rcabrero          #+#    #+#             */
-/*   Updated: 2023/11/28 20:12:36 by rcabrero         ###   ########.fr       */
+/*   Updated: 2023/12/01 21:28:37 by rcabrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_error(char **value, int argc)
 {
-	int i;
-    
+	int	i;
+
 	write(1, "Error\n", 6);
 	if (argc == 2)
 	{
@@ -25,9 +25,9 @@ int	ft_error(char **value, int argc)
 			free(value[i]);
 			i++;
 		}
-		free(value);	
+		free(value);
 	}
-	return(0);
+	return (0);
 }
 
 int	ft_isnum(char *num)
@@ -48,32 +48,38 @@ int	ft_isnum(char *num)
 
 int	check_equals(t_list **head)
 {
-	t_list* current = head[0];
+	t_list	*current;
+	t_list	*temp;
 
-    while (current != NULL) {
-        t_list* temp = current->next;
-        while (temp != NULL) {
-            if (current->content == temp->content) {
-                return (1);
-            }
-            temp = temp->next;
-        }
-        current = current->next;
-    }
-
-    return 0;
+	current = head[0];
+	while (current != NULL)
+	{
+		temp = current->next;
+		while (temp != NULL)
+		{
+			if (current->content == temp->content)
+			{
+				return (1);
+			}
+			temp = temp->next;
+		}
+		current = current->next;
+	}
+	return (0);
 }
 
 int	is_order(t_list **stack_a)
 {
-	t_list	*current = *stack_a;
+	t_list	*current;
 
-    while (current != NULL && current->next != NULL) {
-        if (current->content > current->next->content) {
-            return (0);  // No están ordenados
-        }
-        current = current->next;
-    }
-
-    return (1);
+	current = *stack_a;
+	while (current != NULL && current->next != NULL)
+	{
+		if (current->content > current->next->content)
+		{
+			return (0);
+		}
+		current = current->next;
+	}
+	return (1);
 }

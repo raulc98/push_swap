@@ -6,23 +6,24 @@
 /*   By: rcabrero <rcabrero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 14:46:59 by rcabrero          #+#    #+#             */
-/*   Updated: 2023/11/20 18:55:40 by rcabrero         ###   ########.fr       */
+/*   Updated: 2023/12/01 22:01:06 by rcabrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void swap(t_list **stack_a)
+void	swap(t_list **stack_a)
 {
-	int position;
-	t_list *current;
-	
+	int		position;
+	t_list	*current;
+
 	current = *stack_a;
 	position = 1;
-    while (current != NULL && position > 0) {
-        current = current->next;
-        position--;
-    }
+	while (current != NULL && position > 0)
+	{
+		current = current->next;
+		position--;
+	}
 	if (position == 0 && current != NULL)
 	{
 		(*stack_a)->next = current->next;
@@ -31,22 +32,21 @@ void swap(t_list **stack_a)
 	}
 }
 
-void sa(t_list **stack_a)
+void	sa(t_list **stack_a)
 {
 	swap(stack_a);
 	write(1, "sa\n", 3);
 }
 
-void sb(t_list **stack_b)
+void	sb(t_list **stack_b)
 {
 	swap(stack_b);
 	write(1, "sb\n", 3);
 }
 
-void ss(t_list **stack_a, t_list **stack_b)
+void	ss(t_list **stack_a, t_list **stack_b)
 {
 	swap(stack_a);
 	swap(stack_b);
 	write(1, "sb\n", 3);
 }
-

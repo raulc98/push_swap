@@ -6,7 +6,7 @@
 /*   By: rcabrero <rcabrero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 20:27:45 by rcabrero          #+#    #+#             */
-/*   Updated: 2023/11/20 18:55:26 by rcabrero         ###   ########.fr       */
+/*   Updated: 2023/12/01 22:01:56 by rcabrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,19 +27,19 @@ int	rotate(t_list **stack)
 	return (0);
 }
 
-void ra(t_list **stack_a)
+void	ra(t_list **stack_a)
 {
 	rotate(stack_a);
 	write(1, "ra\n", 3);
 }
 
-void rb(t_list **stack_b)
+void	rb(t_list **stack_b)
 {
 	rotate(stack_b);
 	write(1, "rb\n", 3);
 }
 
-void rr(t_list **stack_a,t_list **stack_b)
+void	rr(t_list **stack_a, t_list **stack_b)
 {
 	rotate(stack_a);
 	rotate(stack_b);

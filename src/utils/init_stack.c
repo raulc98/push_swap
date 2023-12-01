@@ -6,54 +6,55 @@
 /*   By: rcabrero <rcabrero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 18:57:12 by rcabrero          #+#    #+#             */
-/*   Updated: 2023/11/28 20:49:14 by rcabrero         ###   ########.fr       */
+/*   Updated: 2023/12/01 21:50:48 by rcabrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-static void		free_init(int argc,char **values);
+static void		free_init(int argc, char **values);
 static t_list	*get_next_min(t_list **stack);
-static void fill_stack_a(t_list **stack, char **values);
+static void		fill_stack_a(t_list **stack, char **values, int argc);
 
 int	init_stack(int argc, char **argv, t_list **stack)
 {
-    int		i;
-    long	num_aux;
-    char	**values;
-    
+	int		i;
+	long	num_aux;
+	char	**values;
+
 	i = 0;
 	if (argc == 2)
-		values = ft_split(argv[1],' ');
-    else
-    {
-        values = argv;
+		values = ft_split(argv[1], ' ');
+	else
+	{
+		values = argv;
 		i = 1;
 	}
-    while (values[i])
-    {
-        num_aux = ft_atoi(values[i]);
-        if (!ft_isnum(values[i]) || (num_aux < -2147483648 || num_aux > 2147483647))
+	while (values[i])
+	{
+		num_aux = ft_atoi(values[i]);
+		if (!ft_isnum(values[i]) || (num_aux < INT_MIN || num_aux > INT_MAX))
 		{
 			free(stack);
-            return(ft_error(values, argc));
+			return (ft_error(values, argc));
 		}
 		i++;
-    }
-	fill_stack_a(stack, values);
-	free_init(argc,values);
-	index_stack(stack);
-    return (1);
+	}
+	fill_stack_a(stack, values, argc);
+	free_init(argc, values);
+	return (1);
 }
 
-static void fill_stack_a(t_list **stack, char **values)
+static void	fill_stack_a(t_list **stack, char **values, int argc)
 {
-	int i;
-	int num_aux;
-	
+	int	i;
+	int	num_aux;
+
 	i = 0;
+	if (argc > 2)
+		i = 1;
 	while (values[i])
-    {
+	{
 		num_aux = ft_atoi(values[i]);
 		ft_lstadd_back(stack, ft_lstnew(num_aux));
 		i++;
@@ -74,7 +75,7 @@ void	index_stack(t_list **stack)
 	}
 }
 
-static void free_init(int argc,char **values)
+static void	free_init(int argc, char **values)
 {
 	int	i;
 
@@ -104,7 +105,8 @@ static t_list	*get_next_min(t_list **stack)
 	{
 		while (head)
 		{
-			if ((head->index == -1) && (!has_min || head->content < min->content))
+			if ((head->index == -1)
+				&& (!has_min || head->content < min->content))
 			{
 				min = head;
 				has_min = 1;
@@ -115,13 +117,11 @@ static t_list	*get_next_min(t_list **stack)
 	return (min);
 }
 
-
 // void	init_stack(t_list **stack, int argc, char **argv)
 // {
 // 	t_list	*new;
 // 	char	**args;
 // 	int		i;
-
 // 	i = 0;
 // 	if (argc == 2)
 // 		args = ft_split(argv[1], ' ');

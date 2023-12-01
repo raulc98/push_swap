@@ -6,16 +6,15 @@
 /*   By: rcabrero <rcabrero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 21:47:37 by rcabrero          #+#    #+#             */
-/*   Updated: 2023/11/27 20:25:56 by rcabrero         ###   ########.fr       */
+/*   Updated: 2023/12/01 21:54:42 by rcabrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void sort_controller(t_list **stack_a, t_list **stack_b, int argc)
+void	sort_controller(t_list **stack_a, t_list **stack_b)
 {
-	int length;
-	(void) argc;
+	int		length;
 
 	length = ft_lstsize(*stack_a);
 	if (length == 2)
@@ -36,17 +35,17 @@ void sort_controller(t_list **stack_a, t_list **stack_b, int argc)
 	}
 }
 
-void sort_2(t_list **stack_a)
+void	sort_2(t_list **stack_a)
 {
 	if ((*stack_a)->content > (*stack_a)->next->content)
 		sa(stack_a);
 }
 
-void sort_3(t_list **stack_a)
+void	sort_3(t_list **stack_a)
 {
-	int p1;
-	int p2;
-	int p3;
+	int	p1;
+	int	p2;
+	int	p3;
 
 	p1 = (*stack_a)->content;
 	p2 = (*stack_a)->next->content;
@@ -69,13 +68,13 @@ void sort_3(t_list **stack_a)
 	}
 }
 
-void sort_4(t_list **stack_a, t_list **stack_b, int length)
+void	sort_4(t_list **stack_a, t_list **stack_b, int length)
 {
-	int min_index;
+	int	min_index;
 	int	distance;
 
 	min_index = get_index_min_number(stack_a, length);
-	distance = get_distance(stack_a,min_index);
+	distance = get_distance(stack_a, min_index);
 	if (distance == 1)
 		ra(stack_a);
 	else if (distance == 2)
@@ -112,6 +111,6 @@ void	sort_5(t_list **stack_a, t_list **stack_b, int length)
 	if (is_order(stack_a))
 		return ;
 	pb(stack_a, stack_b);
-	sort_4(stack_a, stack_b,length-1);
+	sort_4(stack_a, stack_b, length -1);
 	pa(stack_a, stack_b);
 }

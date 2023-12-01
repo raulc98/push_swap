@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rcabrero <rcabrero@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: rcabrero <rcabrero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 12:38:38 by rcabrero          #+#    #+#             */
-/*   Updated: 2023/11/25 14:02:38 by rcabrero         ###   ########.fr       */
+/*   Updated: 2023/12/01 21:57:09 by rcabrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

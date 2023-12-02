@@ -6,12 +6,11 @@
 /*   By: rcabrero <rcabrero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 21:55:45 by rcabrero          #+#    #+#             */
-/*   Updated: 2023/12/02 17:17:21 by rcabrero         ###   ########.fr       */
+/*   Updated: 2023/12/02 17:50:07 by rcabrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
-#include <limits.h>
 
 int	ft_error(char **value, int argc)
 {
@@ -50,19 +49,19 @@ int	ft_isnum(char *num)
 int	check_equals(t_list **head)
 {
 	t_list	*current;
-	t_list	*temp;
+	t_list	*temp_next;
 
 	current = head[0];
 	while (current != NULL)
 	{
-		temp = current->next;
-		while (temp != NULL)
+		temp_next = current->next;
+		while (temp_next != NULL)
 		{
-			if (current->content == temp->content)
+			if (current->content == temp_next->content)
 			{
 				return (1);
 			}
-			temp = temp->next;
+			temp_next = temp_next->next;
 		}
 		current = current->next;
 	}

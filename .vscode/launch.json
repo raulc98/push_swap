@@ -9,7 +9,7 @@
 			"type": "cppdbg",
 			"request": "launch",
 			"program": "/Users/rcabrero/cursus/push_swap/push_swap",
-			"args": ["3","2","1"],
+			"args": ["9 8 7 6 5 4 22 333"],
 			"stopAtEntry": false,
 			"cwd": "${fileDirname}",
 			"environment": [],
@@ -19,11 +19,3 @@
 
 	]
 }
-
-//UTILS COMMANDS...
-
-// ARG="4 67 3 87 23"; ./push_swap $ARG | wc -l
-// 6
-// $>ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker_OS $ARG
-// OK
-// $>

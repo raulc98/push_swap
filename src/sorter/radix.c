@@ -6,7 +6,7 @@
 /*   By: rcabrero <rcabrero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 13:24:52 by rcabrero          #+#    #+#             */
-/*   Updated: 2023/12/02 16:56:48 by rcabrero         ###   ########.fr       */
+/*   Updated: 2023/12/02 18:06:27 by rcabrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,19 @@
 static int	get_max_bits(t_list **stack)
 {
 	t_list	*head;
-	int		max;
+	int		max_value_index;
 	int		max_bits;
 
 	head = *stack;
-	max = head->index;
+	max_value_index = head->index;
 	max_bits = 0;
 	while (head)
 	{
-		if (head->index > max)
-			max = head->index;
+		if (head->index > max_value_index)
+			max_value_index = head->index;
 		head = head->next;
 	}
-	while ((max >> max_bits) != 0)
+	while ((max_value_index >> max_bits) != 0)
 		max_bits++;
 	return (max_bits);
 }

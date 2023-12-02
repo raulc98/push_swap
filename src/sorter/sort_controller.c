@@ -6,7 +6,7 @@
 /*   By: rcabrero <rcabrero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 21:47:37 by rcabrero          #+#    #+#             */
-/*   Updated: 2023/12/02 16:57:19 by rcabrero         ###   ########.fr       */
+/*   Updated: 2023/12/02 17:36:20 by rcabrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	sort_4(t_list **stack_a, t_list **stack_b, int length)
 	int	distance;
 
 	min_index = get_index_min_number(stack_a, length);
-	distance = get_distance(stack_a, min_index);
+	distance = get_distance_btw_numbers(stack_a, min_index);
 	if (distance == 1)
 		ra(stack_a);
 	else if (distance == 2)
@@ -91,7 +91,7 @@ void	sort_5(t_list **stack_a, t_list **stack_b, int length)
 {
 	int	distance;
 
-	distance = get_distance(stack_a, get_min(stack_a, -1));
+	distance = get_distance_btw_numbers(stack_a, get_min(stack_a, -1));
 	if (distance == 1)
 		ra(stack_a);
 	else if (distance == 2)

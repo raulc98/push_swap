@@ -6,7 +6,7 @@
 /*   By: rcabrero <rcabrero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 21:48:41 by rcabrero          #+#    #+#             */
-/*   Updated: 2023/12/01 22:11:47 by rcabrero         ###   ########.fr       */
+/*   Updated: 2023/12/02 17:48:42 by rcabrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,12 @@ int		pb(t_list **stack_a, t_list **stack_b);
 //utils and more libft
 t_list	*ft_lstlast_prev(t_list *lst);
 int		get_index_min_number(t_list **stack, int length);
-int		get_distance(t_list **stack, int index);
-void	radix(t_list **stack_a, t_list **stack_b, int argc);
-void	index_stack(t_list **stack);
+int		get_distance_btw_numbers(t_list **stack, int index);
+void	radix(t_list **stack_a, t_list **stack_b);
+void	set_index(t_list **stack);
 int		ft_isdigit(int c);
 char	**ft_split(char const *s, char c);
-int		ft_atoi(const char *str);
+long	ft_atoi(const char *str);
 size_t	ft_strlen(const char *str);
 t_list	*ft_lstnew(int content);
 int		get_min(t_list **stack, int val);
@@ -74,5 +74,6 @@ int		is_order(t_list **stack_a);
 int		check_equals(t_list **head);
 int		ft_isnum(char *num);
 int		ft_error(char **value, int argc);
+int		is_min_or_max(long temp);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: rcabrero <rcabrero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 21:47:02 by rcabrero          #+#    #+#             */
-/*   Updated: 2023/12/02 17:20:32 by rcabrero         ###   ########.fr       */
+/*   Updated: 2023/12/02 17:46:06 by rcabrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	main(int argc, char **argv)
 	*stack_a = NULL;
 	if (!init_stack(argc, argv, stack_a))
 		return (0);
-	index_stack (stack_a);
+	set_index (stack_a);
 	stack_b = (t_list **)malloc(sizeof(t_list));
 	*stack_b = NULL;
 	if (!check_equals(stack_a))

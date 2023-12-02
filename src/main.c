@@ -6,7 +6,7 @@
 /*   By: rcabrero <rcabrero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 21:47:02 by rcabrero          #+#    #+#             */
-/*   Updated: 2023/12/01 21:53:21 by rcabrero         ###   ########.fr       */
+/*   Updated: 2023/12/02 17:20:32 by rcabrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,40 +33,6 @@ static int	ft_exit(t_list **stack_a, t_list **stack_b)
 	free_stack (stack_b);
 	return (0);
 }
-
-// void	imprimir_lista(t_list *head, int length)
-// {
-// 	printf("\n");
-// 	t_list	*current;
-// 	int		i;
-// 	int		valor;
-// 	int		index;
-
-// 	current = head;
-// 	i = 1;
-// 	while (i <= length && current != NULL)
-// 	{
-// 		valor = current->content;
-// 		index = current->index;
-// 		printf("%d, ", valor);
-// 		if (i < length)
-// 		{
-// 			current = current->next;
-// 		}
-// 		else
-// 		{
-// 			break;
-// 		}
-// 		i++;
-// 	}
-// 	printf("\n");
-// }
-
-// void leaks()
-// {
-// 	system("leaks  push_swap");
-// }
-// in main:->>> atexit(leaks);
 
 int	main(int argc, char **argv)
 {

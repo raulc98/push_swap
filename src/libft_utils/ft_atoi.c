@@ -6,31 +6,39 @@
 /*   By: rcabrero <rcabrero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 12:40:28 by rcabrero          #+#    #+#             */
-/*   Updated: 2023/12/01 21:58:08 by rcabrero         ###   ########.fr       */
+/*   Updated: 2023/12/02 15:01:54 by rcabrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
-	unsigned int	num;
-	int				i;
-	int				np;
+	long	i;
+	long	number;
+	int		sign;
 
-	np = 1;
 	i = 0;
-	num = 0;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\f'
-		|| str[i] == '\r' || str[i] == '\n' || str[i] == '\v')
+	number = 0;
+	sign = 1;
+	while (str[i] && (str[i] == 32 || (str[i] >= 9 && str[i] <= 13)))
 		i++;
-	if (str[i] == '+' || str[i] == '-')
-		if (str[i++] == '-')
-			np = -1;
-	while (str[i] >= '0' && str[i] <= '9')
+	if (str[i] == '-' || str[i] == '+')
 	{
-		num = num * 10 + (str[i] - '0');
+		if (str[i] == '-')
+			sign = -1;
 		i++;
 	}
-	return ((int)(np * num));
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		number = (number * 10) + (str[i] - '0');
+		i++;
+	}
+	return (number * sign);
 }
+
+//int main() {
+//    const char *numero_str = "-1234533333355564654654654655433";
+//    int resultado = ft_atoi(numero_str);
+//    return 0;
+//}

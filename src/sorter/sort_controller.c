@@ -6,7 +6,7 @@
 /*   By: rcabrero <rcabrero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 21:47:37 by rcabrero          #+#    #+#             */
-/*   Updated: 2023/12/01 21:54:42 by rcabrero         ###   ########.fr       */
+/*   Updated: 2023/12/02 16:57:19 by rcabrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,7 @@ void	sort_controller(t_list **stack_a, t_list **stack_b)
 		sort_5(stack_a, stack_b, length);
 	}
 	else
-	{
-		radix(stack_a, stack_b, length);
-	}
+		radix(stack_a, stack_b);
 }
 
 void	sort_2(t_list **stack_a)

@@ -6,7 +6,7 @@
 /*   By: rcabrero <rcabrero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 18:57:12 by rcabrero          #+#    #+#             */
-/*   Updated: 2023/12/01 21:50:48 by rcabrero         ###   ########.fr       */
+/*   Updated: 2023/12/02 17:17:52 by rcabrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void		fill_stack_a(t_list **stack, char **values, int argc);
 int	init_stack(int argc, char **argv, t_list **stack)
 {
 	int		i;
-	long	num_aux;
+	long	tmp;
 	char	**values;
 
 	i = 0;
@@ -32,8 +32,8 @@ int	init_stack(int argc, char **argv, t_list **stack)
 	}
 	while (values[i])
 	{
-		num_aux = ft_atoi(values[i]);
-		if (!ft_isnum(values[i]) || (num_aux < INT_MIN || num_aux > INT_MAX))
+		tmp = ft_atoi(values[i]);
+		if (!ft_isnum(values[i]) || is_min_or_max(tmp))
 		{
 			free(stack);
 			return (ft_error(values, argc));
@@ -48,15 +48,15 @@ int	init_stack(int argc, char **argv, t_list **stack)
 static void	fill_stack_a(t_list **stack, char **values, int argc)
 {
 	int	i;
-	int	num_aux;
+	int	tmp;
 
 	i = 0;
 	if (argc > 2)
 		i = 1;
 	while (values[i])
 	{
-		num_aux = ft_atoi(values[i]);
-		ft_lstadd_back(stack, ft_lstnew(num_aux));
+		tmp = ft_atoi(values[i]);
+		ft_lstadd_back(stack, ft_lstnew(tmp));
 		i++;
 	}
 }

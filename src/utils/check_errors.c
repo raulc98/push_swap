@@ -6,11 +6,12 @@
 /*   By: rcabrero <rcabrero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 21:55:45 by rcabrero          #+#    #+#             */
-/*   Updated: 2023/12/01 21:28:37 by rcabrero         ###   ########.fr       */
+/*   Updated: 2023/12/02 17:17:21 by rcabrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+#include <limits.h>
 
 int	ft_error(char **value, int argc)
 {
@@ -82,4 +83,11 @@ int	is_order(t_list **stack_a)
 		current = current->next;
 	}
 	return (1);
+}
+
+int	is_min_or_max(long temp)
+{
+	if (temp < -2147483648 || temp > 2147483647)
+		return (1);
+	return (0);
 }
